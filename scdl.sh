@@ -60,7 +60,7 @@ function downsong() { #Done!
         echo "[-] Downloading $title..."
     fi
     if $curlinstalled; then
-        curl -# -C  -L --user-agent 'Mozilla/5.0' -o "`echo -e "$filename"`" "$songurl";
+        curl -C - -L --user-agent 'Mozilla/5.0' -o "`echo -e "$filename"`" "$songurl";
     else
         wget -c --max-redirect=1000 --trust-server-names -U 'Mozilla/5.0' -O "`echo -e "$filename"`" "$songurl";
     fi
